@@ -1,6 +1,7 @@
 package com.advance.service;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,6 +52,21 @@ public class StudentServiceIMPL implements StudentService {
 
 		return repo.findAll();
 
+	}
+
+	@Override
+	public Student createStudents(Map<String, String> map) {
+		Student student = new Student();
+		String name = map.get("name");
+		String phone = map.get("phone");
+		String password = map.get("password");
+
+		student.setName(name);
+		student.setPassword(password);
+		student.setPhone(phone);
+		
+		student = repo.save(student);
+		return student;
 	}
 }
 		

@@ -16,25 +16,23 @@ public class Student {
 	@GeneratedValue
 	private int id;
 
-	@Pattern(regexp = "^[a-zA-Z]{2,}$", message = "will except a name with at least two characters")
+	//@Pattern(regexp = "^[a-zA-Z]{2,}$", message = "will except a name with at least two characters")
 	private String name;
 
-	@Pattern(regexp = "^\\d{10}$", message = "invalid phone number entered")
+	//@Pattern(regexp = "^\\d{10}$", message = "invalid phone number entered")
 	private String phone;
 
 	private String address;
 
-	@Pattern(regexp = " ^[A-Za-z0-9]$", message = "The password has at least one special character  ")
+	//@Pattern(regexp = " ^[A-Za-z0-9]$", message = "The password has at least one special character  ")
 	private String password;
 
 	public Student() {
 
 	}
 
-	public Student(int id,
-			@Pattern(regexp = "^[a-zA-Z]{2,}$", message = "will except a name with at least two characters") String name,
-			@Pattern(regexp = "^\\d{10}$", message = "invalid phone number entered") String phone, String address,
-			@Pattern(regexp = " ^[A-Za-z0-9]$", message = "The password has at least one special character  ") String password) {
+	
+	public Student(int id, String name, String phone, String address, String password) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -42,6 +40,7 @@ public class Student {
 		this.address = address;
 		this.password = password;
 	}
+
 
 	public String getPassword() {
 		return password;

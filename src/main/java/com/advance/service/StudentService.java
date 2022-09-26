@@ -1,6 +1,7 @@
 package com.advance.service;
 
 import java.util.List;
+import java.util.Map;
 
 import com.advance.model.Student;
 
@@ -15,6 +16,8 @@ public interface StudentService {
 	void updateStudent(Student student);
 
 	List<Student> findAllStudent();
+
+	Student createStudents(Map<String, String> map);
 
 
 }
